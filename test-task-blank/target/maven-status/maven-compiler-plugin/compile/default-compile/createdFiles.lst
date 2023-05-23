@@ -1,0 +1,6 @@
+com\visma\testtask\SecurityConfiguration$1.class
+com\visma\testtask\SecurityConfiguration.class
+com\visma\testtask\TestTaskApplication.class
+com\visma\testtask\dto\InstitutionDto.class
+com\visma\testtask\api\InstitutionController.class
+com\visma\testtask\InstitutionStatus.class

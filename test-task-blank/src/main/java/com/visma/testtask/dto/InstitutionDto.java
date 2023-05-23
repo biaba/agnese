@@ -1,12 +1,28 @@
 package com.visma.testtask.dto;
 
+import com.visma.testtask.InstitutionStatus;
+
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Entity
 public class InstitutionDto {
+    @Id
+    private Long id;
+
     private String name;
+    @Column(name="reg_num")
     private String regNum;
+    @Column(name="reg_date")
     private LocalDateTime regDate;
     private String type;
+
+    @OneToOne
+    @JoinColumn(name = "type_id", referencedColumnName = "id")
+    private Classifiers classifiers;
+
+    @Enumerated(EnumType.STRING)
+    private InstitutionStatus status;
 
     public InstitutionDto() {
     }
@@ -41,5 +57,29 @@ public class InstitutionDto {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Classifiers getClassifiers() {
+        return classifiers;
+    }
+
+    public void setClassifiers(Classifiers classifiers) {
+        this.classifiers = classifiers;
+    }
+
+    public InstitutionStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(InstitutionStatus status) {
+        this.status = status;
     }
 }
