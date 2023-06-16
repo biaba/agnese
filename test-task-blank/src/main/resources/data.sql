@@ -1,5 +1,6 @@
-DROP TABLE IF EXISTS institutions;
 DROP TABLE IF EXISTS classifiers_translations;
+DROP TABLE IF EXISTS institution_dto;
+DROP TABLE IF EXISTS institutions;
 DROP TABLE IF EXISTS classifiers;
 DROP SEQUENCE IF EXISTS institutions_id_seq;
 DROP SEQUENCE IF EXISTS classifiers_id_seq;

@@ -8,7 +8,7 @@ public class ClassifiersTranslations {
     @Id
     private Long id;
 
-    @OneToOne
+    @OneToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "classifier_id", referencedColumnName = "id")
     // FOREIGN KEY (classifier_id) REFERENCES classifiers(id);
     private Classifiers classifiers;

@@ -5,8 +5,9 @@ import com.visma.testtask.InstitutionStatus;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Entity
+@Entity(name="institutions")
 public class InstitutionDto {
+
     @Id
     private Long id;
 
@@ -15,7 +16,6 @@ public class InstitutionDto {
     private String regNum;
     @Column(name="reg_date")
     private LocalDateTime regDate;
-    private String type;
 
     @OneToOne
     @JoinColumn(name = "type_id", referencedColumnName = "id")
@@ -52,11 +52,11 @@ public class InstitutionDto {
     }
 
     public String getType() {
-        return type;
+        return classifiers.getCode();
     }
 
     public void setType(String type) {
-        this.type = type;
+        this.classifiers.setCode(type);
     }
 
     public Long getId() {
